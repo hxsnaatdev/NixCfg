@@ -36,7 +36,7 @@
     darwinSystem = nix-darwin.lib.darwinSystem {
       specialArgs = {inherit inputs;};
       modules = [
-        ./hosts/darwin.nix
+        ./hosts/m4/darwin.nix
 
         /*
         not using kanata and its menu bar tray rn , to hectic for me to re-engineer from inpirational repo's

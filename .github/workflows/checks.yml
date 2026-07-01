@@ -1,0 +1,20 @@
+# .github/workflows/nix-check.yml
+name: Nix flake check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: DeterminateSystems/nix-installer-action@main
+
+      - name: Flake check
+        run: nix flake check
+
+      - name: Build (no activation)
+        run: nix build .#darwinConfigurations.Hasnaats-MacBook-Air.system

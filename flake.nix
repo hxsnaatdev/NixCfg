@@ -10,25 +10,10 @@
 
     #macos utils
     hammerspoon.url = "path:/Users/ariz/.hammerspoon";
-    Better-display = {
-      url = "github:waydabber/BetterDisplay";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
-    LiveMacos-Wallpaper = {
-      url = "github:thusvill/LiveWallpaperMacOS";
-      input.nixpkgs.follows = "nixpkgs";
-    };
 
     #keyboard
     Kanata-Tray = {
       url = "github:rszyma/Kanata-Tray";
-      input.nixpkgs.follows = "nixpkgs";
-    };
-
-    Kanata = {
-      url = "github:jtroo/kanata";
       inputs = {
         nixpkgs.follows = "nixpkgs";
       };
@@ -43,21 +28,32 @@
     };
   };
 
-  outputs = {
+  outputs = inputs @ {
     nix-darwin,
     home-manager,
     ...
   }: let
     darwinSystem = nix-darwin.lib.darwinSystem {
+      specialArgs = {inherit inputs;};
       modules = [
         ./hosts/darwin.nix
-        ./module/darwin/kanata-tray.nix
-        ./module/darwin/kanata.nix
+
+        /*
+        not using kanata and its menu bar tray rn , to hectic for me to re-engineer from inpirational repo's
+        like :
+        os-nixCfg
+        daniel's -d rens
+        and many others at oxalica
+        # ./module/darwin/kanata-tray.nix
+        #./module/darwin/kanata.nix
+        */
+
         home-manager.darwinModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.ariz = import ./home;
+          home-manager.extraSpecialArgs = {inherit inputs;};
+          home-manager.users.ariz = import ./home/home-manager.nix;
         }
       ];
     };

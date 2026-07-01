@@ -1,5 +1,5 @@
 {...}: {
-  impots = [
+  imports = [
     ../module/home-managed/hammerspoon.nix
     ../module/home-managed/warpd.nix
     ./dev/git.nix

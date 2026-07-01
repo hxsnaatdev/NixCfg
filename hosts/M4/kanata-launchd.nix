@@ -12,10 +12,10 @@
   };
 
   launchd.user.agents.Kanata-tray-local = {
-    command = "sudo --preserve-env /Users/ariz/.config/keyboard/kanata/executables/kanata-tray/kanata-tray-macos";
+    command = "/Users/ariz/.config/keyboard/kanata/executables/kanata-tray/kanata-tray-macos";
     serviceConfig = {
       RunAtLoad = true;
-      keepAlive = {
+      KeepAlive = {
         Crashed = true;
         SuccessfulExit = false;
       };

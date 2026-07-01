@@ -1,9 +1,9 @@
 {...}: {
-  launcd.daemons.Kanata-local = {
-    scipt = "sudo --preserve-env /Users/ariz/.config/keyboard/kanata/executables/macos-binaries-arm64/kanata_macos_cmd_allowed_arm64 --nodelay --cfg /Users/ariz/.config/keyboard/kanata/ariz.kbd";
+  launchd.daemons.Kanata-local = {
+    script = "/Users/ariz/.config/keyboard/kanata/executables/macos-binaries-arm64/kanata_macos_cmd_allowed_arm64 --nodelay --cfg /Users/ariz/.config/keyboard/kanata/ariz.kbd";
     serviceConfig = {
       RunAtLoad = true;
-      keepAlive = {
+      KeepAlive = {
         Crashed = true;
         SuccessfulExit = false;
       };

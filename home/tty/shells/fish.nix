@@ -43,7 +43,7 @@
           owner = "jorgebucaran";
           repo = "fisher";
           rev = "a04308be92daa6cfecdbb0ca58b1e8508664cff2";
-          hash = "sha256-1fvd4q916xk152ddyzbr9avw550v07i11a5s6977nhcf87avpzj9=";
+          hash = "sha256-Sf671UGOQXtOMrqoEOIBG5TCt0p5fd+aKGF2ExImbbs=";
         };
       }
 
@@ -53,7 +53,7 @@
           owner = "jorgebucaran";
           repo = "autopair.fish";
           rev = "244bb1ebf74bf944a1ba1338fc1026075003c5e3";
-          hash = "sha256-0mfx43n3ngbmyfp4a4m9a04gcgwlak6f9myx2089bhp5qkrkanmk=";
+          hash = "sha256-s1o188TlwpUQEN3X5MxUlD/2CFCpEkWu83U9O+wg3VU=";
         };
       }
 
@@ -63,7 +63,7 @@
           owner = "gazorby";
           repo = "fifc";
           rev = "v0.1.1";
-          hash = "sha256-18cvhvdc0dg3kvdg1a1y2hgmya4kcbxpknxhsl61gwm33qrki4d7=";
+          hash = "sha256-p5E4Mx6j8hcM1bDbeftikyhfHxQ+qPDanuM1wNqGm6E=";
         };
       }
     ];

@@ -8,9 +8,6 @@
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    #macos utils
-    hammerspoon.url = "path:/Users/ariz/.hammerspoon";
-
     #keyboard
     Kanata-Tray = {
       url = "github:rszyma/Kanata-Tray";
@@ -36,7 +33,7 @@
     darwinSystem = nix-darwin.lib.darwinSystem {
       specialArgs = {inherit inputs;};
       modules = [
-        ./hosts/m4/darwin.nix
+        ./hosts/M4/darwin.nix
 
         /*
         not using kanata and its menu bar tray rn , to hectic for me to re-engineer from inpirational repo's

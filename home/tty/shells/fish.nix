@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   programs.fish = {
     enable = true;
-    packages = pkgs.fish;
+    package = pkgs.fish;
 
     interactiveShellInit = ''
       set -g fish_vi_force_cursor 1
@@ -42,8 +42,8 @@
         src = pkgs.fetchFromGitHub {
           owner = "jorgebucaran";
           repo = "fisher";
-          rev = "v4.4.8";
-          hash = pkgs.lib.fakeHash;
+          rev = "a04308be92daa6cfecdbb0ca58b1e8508664cff2";
+          hash = "sha256-1fvd4q916xk152ddyzbr9avw550v07i11a5s6977nhcf87avpzj9=";
         };
       }
 
@@ -51,9 +51,9 @@
         name = "autopair";
         src = pkgs.fetchFromGitHub {
           owner = "jorgebucaran";
-          repo = "autopair";
-          rev = "v1.0.4";
-          hash = pkgs.lib.fakeHash;
+          repo = "autopair.fish";
+          rev = "244bb1ebf74bf944a1ba1338fc1026075003c5e3";
+          hash = "sha256-0mfx43n3ngbmyfp4a4m9a04gcgwlak6f9myx2089bhp5qkrkanmk=";
         };
       }
 
@@ -63,7 +63,7 @@
           owner = "gazorby";
           repo = "fifc";
           rev = "v0.1.1";
-          hash = pkgs.lib.fakeHash;
+          hash = "sha256-18cvhvdc0dg3kvdg1a1y2hgmya4kcbxpknxhsl61gwm33qrki4d7=";
         };
       }
     ];

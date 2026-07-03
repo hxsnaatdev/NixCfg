@@ -7,10 +7,12 @@
   nix.settings.auto-optimise-store = true;
 
   environment.systemPackages = with pkgs; [
-    Kanata
-    BetterDisplay
+    kanata
+    betterdisplay
   ];
 
+  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnsupportedSystem = true;
   nixpkgs.hostPlatform = "aarch64-darwin";
   system.primaryUser = "ariz";
 

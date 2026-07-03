@@ -17,4 +17,4 @@ jobs:
         run: nix flake check
 
       - name: Build (no activation)
-        run: nix build .#darwinConfigurations.Hasnaats-MacBook-Air.system
+        run: nix build .#darwinConfigurations.Hasnaats-MacBook-Air.system --no-link --show-trace

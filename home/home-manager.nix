@@ -14,6 +14,7 @@
 
   programs.home-manager.enable = true;
   programs.warpd.enable = true;
+  programs.warpd.package = null;
   programs.atuin = {
     enable = true;
     enableFishIntegration = true;

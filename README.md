@@ -1,6 +1,7 @@
 ### NixCfg
 --- 
 My nix config, now with 
+
  -sops
 
 

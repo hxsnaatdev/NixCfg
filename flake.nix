@@ -7,6 +7,8 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    sops-nix.url = "github:Mic92/sops-nix";
+    # sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     #keyboard
     Kanata-Tray = {
@@ -28,12 +30,14 @@
   outputs = inputs @ {
     nix-darwin,
     home-manager,
+    sops-nix,
     ...
   }: let
     darwinSystem = nix-darwin.lib.darwinSystem {
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/M4/darwin.nix
+        sops-nix.darwinModules.sops
 
         /*
         not using kanata and its menu bar tray rn , to hectic for me to re-engineer from inpirational repo's
@@ -46,12 +50,15 @@
         */
 
         home-manager.darwinModules.home-manager
-        {
+        ({config, ...}: {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = {inherit inputs;};
+          home-manager.extraSpecialArgs = {
+            inherit inputs;
+            syncthingGuiPasswordFile = config.sops.secrets."syncthing/guiPassword".path;
+          };
           home-manager.users.ariz = import ./home/home-manager.nix;
-        }
+        })
       ];
     };
   in {

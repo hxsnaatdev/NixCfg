@@ -16,5 +16,17 @@
   nixpkgs.hostPlatform = "aarch64-darwin";
   system.primaryUser = "ariz";
 
+  sops = {
+    defaultSopsFile = ../../secrets.yaml;
+    defaultSopsFormat = "yaml";
+
+    age.keyFile = "/Users/ariz/.config/sops/age/keys.txt";
+
+    secrets."syncthing/guiPassword" = {
+      owner = "ariz";
+      mode = "0400";
+    };
+  };
+
   system.stateVersion = 6;
 }

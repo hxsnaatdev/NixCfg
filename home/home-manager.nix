@@ -5,6 +5,7 @@
     ./dev/git.nix
     ./tty/shells/fish.nix
     ./tty/starship.nix
+    ./syncthing.nix
   ];
   home.username = "ariz";
   home.homeDirectory = lib.mkForce "/Users/ariz";

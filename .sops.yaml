@@ -1,0 +1,8 @@
+keys:
+  - &ariz age125jaxrvms0c7vqw9gdqj7wf937v24jay2te5aflpuxfy7z3yhqrsy29r8r
+
+creation_rules:
+  - path_regex: secrets.yaml$
+    key_groups:
+      - age:
+          - *ariz

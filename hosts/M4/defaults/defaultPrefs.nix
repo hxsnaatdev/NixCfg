@@ -34,6 +34,9 @@
       AppleLanguage = ["en"];
       AppleAccentColor = 0;
       AppleHighlightColor = "1.000000 0.733333 0.721569 Red";
+      AppleShowAllFiles = true;
+      AppleInterfaceStyle = "Dark";
+      AppleIconAppearanceCustomTintColor = "0.593048 1.000000 0.728584 0.596341";
     };
   };
 }

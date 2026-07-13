@@ -20,8 +20,12 @@
     '';
 
     shellAbbrs = {
+      b = "btop";
       nv = "nvim";
       v = "vim";
+      zz = "zellij";
+      op = "opencode";
+      lg = "lazygit";
     };
     functions = {
       y = {

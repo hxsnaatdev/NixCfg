@@ -37,6 +37,8 @@
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/M4/darwin.nix
+        ./module/home-managed/hammerspoon.nix
+        ./module/home-managed/warpd.nix
         sops-nix.darwinModules.sops
 
         /*

@@ -25,6 +25,13 @@
         nixpkgs.follows = "nixpkgs";
       };
     };
+
+    eilmeldung-tui = {
+      url = "github:hristo-auer/eilmeldung";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
   };
 
   outputs = inputs @ {

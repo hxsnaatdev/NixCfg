@@ -16,7 +16,8 @@
   home.stateVersion = "26.05";
   home.enableNixpkgsReleaseCheck = false;
   home.file.".hushlogin".text = "";
-  home.package = {
+  /*
+     home.package = {
     import = [
       inputs.eilmeldung.homeManagerModules.default
     ];
@@ -24,6 +25,7 @@
       enable = true;
     };
   };
+  */
 
   programs.home-manager.enable = true;
   programs.warpd.enable = true;

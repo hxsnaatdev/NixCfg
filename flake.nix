@@ -26,20 +26,19 @@
       };
     };
 
-    /*
-      eilmeldung-tui = {
-      url = "github:hristo-auer/eilmeldung";
+    eilmeldung-tui = {
+      url = "github:christo-auer/eilmeldung";
       inputs = {
         nixpkgs.follows = "nixpkgs";
       };
     };
-    */
   };
 
   outputs = inputs @ {
     nix-darwin,
     home-manager,
     sops-nix,
+    eilmeldung,
     ...
   }: let
     darwinSystem = nix-darwin.lib.darwinSystem {

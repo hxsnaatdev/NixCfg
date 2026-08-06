@@ -26,12 +26,11 @@
       };
     };
 
-    eilmeldung-tui = {
+    eilmeldung = {
       url = "github:christo-auer/eilmeldung";
       inputs = {
         nixpkgs.follows = "nixpkgs";
       };
-    };
   };
 
   outputs = inputs @ {

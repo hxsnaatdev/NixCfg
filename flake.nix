@@ -31,44 +31,45 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
       };
-  };
-
-  outputs = inputs @ {
-    nix-darwin,
-    home-manager,
-    sops-nix,
-    eilmeldung,
-    ...
-  }: let
-    darwinSystem = nix-darwin.lib.darwinSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./hosts/M4/darwin.nix
-        sops-nix.darwinModules.sops
-
-        /*
-        not using kanata and its menu bar tray rn , to hectic for me to re-engineer from inpirational repo's
-        like :
-        os-nixCfg
-        daniel's -d rens
-        and many others at oxalica
-        # ./module/darwin/kanata-tray.nix
-        #./module/darwin/kanata.nix
-        */
-
-        home-manager.darwinModules.home-manager
-        ({config, ...}: {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = {
-            inherit inputs;
-            syncthingGuiPasswordFile = config.sops.secrets."syncthing/guiPassword".path;
-          };
-          home-manager.users.ariz = import ./home/home-manager.nix;
-        })
-      ];
     };
-  in {
-    darwinConfigurations."Hasnaats-MacBook-Air" = darwinSystem;
+
+    outputs = inputs @ {
+      nix-darwin,
+      home-manager,
+      sops-nix,
+      eilmeldung,
+      ...
+    }: let
+      darwinSystem = nix-darwin.lib.darwinSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/M4/darwin.nix
+          sops-nix.darwinModules.sops
+
+          /*
+          not using kanata and its menu bar tray rn , to hectic for me to re-engineer from inpirational repo's
+          like :
+          os-nixCfg
+          daniel's -d rens
+          and many others at oxalica
+          # ./module/darwin/kanata-tray.nix
+          #./module/darwin/kanata.nix
+          */
+
+          home-manager.darwinModules.home-manager
+          ({config, ...}: {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = {
+              inherit inputs;
+              syncthingGuiPasswordFile = config.sops.secrets."syncthing/guiPassword".path;
+            };
+            home-manager.users.ariz = import ./home/home-manager.nix;
+          })
+        ];
+      };
+    in {
+      darwinConfigurations."Hasnaats-MacBook-Air" = darwinSystem;
+    };
   };
 }

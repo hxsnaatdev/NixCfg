@@ -1,6 +1,6 @@
 ### NixCfg
 --- 
-My nix config, now with 
+My nix configuration
 
  -sops
 
